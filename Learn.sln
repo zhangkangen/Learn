@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcLucene", "MvcLucene\MvcLucene.csproj", "{BD6C982E-295B-44C0-AAA6-F0F6B4F27187}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuceneSearch.Data", "LuceneSearch.Data\LuceneSearch.Data.csproj", "{0DD5FFAE-2333-424F-956A-EC310EBDD45A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuceneSearch.Library", "LuceneSearch.Library\LuceneSearch.Library.csproj", "{721F70B8-B550-4828-B4C7-66D341D66B72}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD6C982E-295B-44C0-AAA6-F0F6B4F27187}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD6C982E-295B-44C0-AAA6-F0F6B4F27187}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD6C982E-295B-44C0-AAA6-F0F6B4F27187}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD6C982E-295B-44C0-AAA6-F0F6B4F27187}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DD5FFAE-2333-424F-956A-EC310EBDD45A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DD5FFAE-2333-424F-956A-EC310EBDD45A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DD5FFAE-2333-424F-956A-EC310EBDD45A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DD5FFAE-2333-424F-956A-EC310EBDD45A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{721F70B8-B550-4828-B4C7-66D341D66B72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{721F70B8-B550-4828-B4C7-66D341D66B72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{721F70B8-B550-4828-B4C7-66D341D66B72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{721F70B8-B550-4828-B4C7-66D341D66B72}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
