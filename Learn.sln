@@ -7,6 +7,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuceneSearch.Data", "Lucene
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuceneSearch.Library", "LuceneSearch.Library\LuceneSearch.Library.csproj", "{721F70B8-B550-4828-B4C7-66D341D66B72}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuceneSearch.Tests", "LuceneSearch.Tests\LuceneSearch.Tests.csproj", "{3D3BE2FE-0576-41ED-9BEB-84E3D3EBF7F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analyser", "Analyser\Analyser.csproj", "{420C99CA-4DE4-4802-9129-B26C35786224}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Segmenter", "Segmenter\Segmenter.csproj", "{7930A2C1-15B4-4EAB-9CD4-4B709A3FD76E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Jieba", "Jieba", "{088B6CB0-7B09-4FEC-8318-3FB1EB147DA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,8 +33,24 @@ Global
 		{721F70B8-B550-4828-B4C7-66D341D66B72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{721F70B8-B550-4828-B4C7-66D341D66B72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{721F70B8-B550-4828-B4C7-66D341D66B72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D3BE2FE-0576-41ED-9BEB-84E3D3EBF7F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D3BE2FE-0576-41ED-9BEB-84E3D3EBF7F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D3BE2FE-0576-41ED-9BEB-84E3D3EBF7F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D3BE2FE-0576-41ED-9BEB-84E3D3EBF7F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{420C99CA-4DE4-4802-9129-B26C35786224}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{420C99CA-4DE4-4802-9129-B26C35786224}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{420C99CA-4DE4-4802-9129-B26C35786224}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{420C99CA-4DE4-4802-9129-B26C35786224}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7930A2C1-15B4-4EAB-9CD4-4B709A3FD76E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7930A2C1-15B4-4EAB-9CD4-4B709A3FD76E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7930A2C1-15B4-4EAB-9CD4-4B709A3FD76E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7930A2C1-15B4-4EAB-9CD4-4B709A3FD76E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7930A2C1-15B4-4EAB-9CD4-4B709A3FD76E} = {088B6CB0-7B09-4FEC-8318-3FB1EB147DA7}
+		{420C99CA-4DE4-4802-9129-B26C35786224} = {088B6CB0-7B09-4FEC-8318-3FB1EB147DA7}
 	EndGlobalSection
 EndGlobal
