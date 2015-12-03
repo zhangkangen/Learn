@@ -13,11 +13,17 @@ namespace MvcLucene.Controllers
         // GET: /Home/
         private readonly JiebaTest _jiebaTest = new JiebaTest();
 
-        public ActionResult Index()
+        public ActionResult Index(string key)
         {
-            ViewData["str"] = _jiebaTest.JiebaSegment();
+            if (!string.IsNullOrEmpty(key))
+            {
+                ViewData["str"] = _jiebaTest.JiebaSegment(key);
+            }
+            else
+            {
+                ViewData["str"] = "请输入";
+            }
             return View();
         }
-
     }
 }

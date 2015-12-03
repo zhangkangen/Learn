@@ -9,11 +9,11 @@ namespace LuceneSearch.Library
 {
     public class JiebaTest
     {
-        public string JiebaSegment()
+        public string JiebaSegment(String str)
         {
             var segmenter = new JiebaSegmenter();
-            
-            var segments = segmenter.Cut("我来到北京清华大学", true);
+
+            var segments = segmenter.Cut(str, false);
             return segments.Join("/");
         }
     }
