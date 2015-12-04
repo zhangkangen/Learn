@@ -49,7 +49,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GoLucene.cs" />
-    <Compile Include="JiebaTest.cs" />
+    <Compile Include="JiebaAnalyzer.cs" />
+    <Compile Include="JiebaTokenizer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +59,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Analyser\Analyser.csproj">
+      <Project>{420c99ca-4de4-4802-9129-b26c35786224}</Project>
+      <Name>Analyser</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LuceneSearch.Data\LuceneSearch.Data.csproj">
+      <Project>{0dd5ffae-2333-424f-956a-ec310ebdd45a}</Project>
+      <Name>LuceneSearch.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Segmenter\Segmenter.csproj">
       <Project>{7930a2c1-15b4-4eab-9cd4-4b709a3fd76e}</Project>
       <Name>Segmenter</Name>

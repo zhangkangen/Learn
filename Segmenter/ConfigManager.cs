@@ -12,7 +12,11 @@ namespace JiebaNet.Segmenter
 
         public static string MainDictFile
         {
-            get { return ConfigurationManager.AppSettings["MainDictFile"] ?? @"Resources\dict.txt"; }
+            get
+            {
+                return ConfigurationManager.AppSettings["MainDictFile"] ??
+                    Path.Combine(Root, @"Resources\dict.txt");
+            }
         }
 
         public static string ProbTransFile

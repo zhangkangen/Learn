@@ -134,6 +134,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -248,17 +249,27 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\lucene_index\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LuceneSearch.Data\LuceneSearch.Data.csproj">
+      <Project>{0DD5FFAE-2333-424F-956A-EC310EBDD45A}</Project>
+      <Name>LuceneSearch.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LuceneSearch.Library\LuceneSearch.Library.csproj">
       <Project>{721f70b8-b550-4828-b4c7-66d341d66b72}</Project>
       <Name>LuceneSearch.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Segmenter\Segmenter.csproj">
+      <Project>{7930a2c1-15b4-4eab-9cd4-4b709a3fd76e}</Project>
+      <Name>Segmenter</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

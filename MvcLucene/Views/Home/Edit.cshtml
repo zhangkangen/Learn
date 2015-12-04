@@ -1,0 +1,38 @@
+﻿@using LuceneSearch.Data.Model
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>@Html.ActionLink("首页", "Index")</h2>
+<h2>Edit</h2>
+@ViewData["msg"]
+<form method="POST">
+    <table>
+        <tr>
+            <td>Id:</td>
+            <td>
+                <input type="text" name="Id" /></td>
+        </tr>
+        <tr>
+            <td>Name:</td>
+            <td>
+                <input type="text" name="Name" /></td>
+        </tr>
+        <tr>
+            <td>Description:</td>
+            <td>
+                <textarea name="Description"></textarea></td>
+        </tr>
+    </table>
+    <input type="submit" value="提交" />
+</form>
+<hr />
+@{
+    var data = (SampleData)ViewData["data"];
+    if (data != null)
+    {
+    @data.Name
+    }
+    var list = (List<SampleData>)ViewData["list"] ?? new List<SampleData>();
+    @list.Count
+}
