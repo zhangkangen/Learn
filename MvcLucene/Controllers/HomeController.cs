@@ -26,7 +26,6 @@ namespace MvcLucene.Controllers
             }
             else
             {
-                GoLucene.UpdateLuceneIndex(SampleDataRepository.GetAll());
                 ViewData["str"] = "请输入";
             }
 
@@ -62,7 +61,7 @@ namespace MvcLucene.Controllers
                 }
                 else
                 {
-                    GoLucene.UpdateLuceneIndex(data);
+                    IndexQueue.GetInstance().AddQueue(new Data{SampleData = data,OptionType = IndexOptionType.Add});
                 }
             }
             return View();

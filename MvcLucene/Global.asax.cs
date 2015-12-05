@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -24,6 +25,10 @@ namespace MvcLucene
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+            //设置lucene索引文件的地址
+            GoLucene._luceneDir = Path.Combine(System.Web.Hosting.HostingEnvironment.MapPath("/App_Data"), @"lucene_index");
+
+            //启动队列处理队列中的数据
             IndexQueue.GetInstance().StartThread();
         }
     }

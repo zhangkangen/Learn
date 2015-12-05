@@ -49,14 +49,22 @@ namespace LuceneSearch.Library
                 {
                     while (queue.Count > 0)
                     {
-                        var data = queue.Dequeue();
-                        if (data.OptionType == IndexOptionType.Add)
+                        try
                         {
-                            GoLucene.UpdateLuceneIndex(data.SampleData);
+                            var data = queue.Dequeue();
+                            if (data.OptionType == IndexOptionType.Add)
+                            {
+                                GoLucene.UpdateLuceneIndex(data.SampleData);
+                            }
+                            else if (data.OptionType == IndexOptionType.Delete)
+                            {
+                                GoLucene.ClearLuceneIndexRecord(data.SampleData.Id);
+                            }
                         }
-                        else if (data.OptionType == IndexOptionType.Delete)
+                        catch (Exception e)
                         {
-                            GoLucene.ClearLuceneIndexRecord(data.SampleData.Id);
+                            //TODO:写入日志
+                            throw;
                         }
                     }
                 }
