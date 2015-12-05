@@ -206,6 +206,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="image\ui-anim_basic_16x16.gif" />
     <Content Include="log4net.config" />
     <Content Include="App_Data\Resources\char_state_tab.json" />
     <Content Include="App_Data\Resources\pos_prob_emit.json" />

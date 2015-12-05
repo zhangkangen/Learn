@@ -3,24 +3,36 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@section css
+{
+    <style>
+        .ui-autocomplete-loading {
+            background: white url("/image/ui-anim_basic_16x16.gif") right center no-repeat;
+        }
+    </style>
+}
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <h2 class="h2">Index</h2>
         </div>
         @Html.ActionLink("添加", "Edit")
-        <br />
+        <br/>
         @ViewData["str"]
         <form method="POST">
-            <input type="text" name="key" />
-            <input type="submit" value="提交" />
+            <input type="text" id="key" name="key"/>
+            <input type="submit" value="提交"/>
         </form>
+        <div class="ui-widget" style="margin-top: 2em;">
+            Result:
+            <div id="log" style="height: 200px; width: 300px; overflow: auto;" class="ui-widget-content"></div>
+        </div>
         @{
-            List<SampleData> list = (List<SampleData>)ViewData["result"] ?? new List<SampleData>();
+            List<SampleData> list = (List<SampleData>) ViewData["result"] ?? new List<SampleData>();
             if (list.Count > 0)
             {
-            <table>
-                <thead>
+                <table>
+                    <thead>
                     <tr>
                         <th>Id:
                         </th>
@@ -28,24 +40,41 @@
                         <th>Description:</th>
                         <th>操作</th>
                     </tr>
-                </thead>
-                @foreach (var data in list)
-                {
-                    <tbody>
+                    </thead>
+                    @foreach (var data in list)
+                    {
+                        <tbody>
                         <tr>
                             <td>@data.Id</td>
                             <td>@data.Name</td>
                             <td>@data.Description</td>
-                            <td>@Html.ActionLink("Delete", "Delete", new { Id = data.Id })</td>
+                            <td>@Html.ActionLink("Delete", "Delete", new {Id = data.Id})</td>
                         </tr>
-                    </tbody>
-                }
-            </table>
+                        </tbody>
+                    }
+                </table>
             }
-        }
-        @section scripts
-        {
-
         }
     </div>
 </div>
+@section scripts
+        {
+            <script>
+                $(function () {
+                    function log(message) {
+                        $('div').text(message).prependTo('#log');
+                        $('#log').scrollTop(0);
+                    }
+
+                    $('#key').autocomplete({
+                        source: '',
+                        minLength: 2,
+                        select: function (event, ui) {
+                            log(ui.item ?
+                                "Selected: " + ui.item.value + " aka " + ui.item.id :
+                                "Nothing seleted, input was " + this.value);
+                        }
+                    });
+                });
+            </script>
+        }
