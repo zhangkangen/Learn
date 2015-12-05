@@ -56,8 +56,7 @@ namespace MvcLucene.Controllers
             }
             else
             {
-                var b = GoLucene.Search(data.Id.ToString(), "Id");
-                if (b.Count() > 0)
+                if (GoLucene.Search(data.Id.ToString(), "Id").Any())
                 {
                     ViewData["msg"] = "Id已存在";
                 }
@@ -65,6 +64,16 @@ namespace MvcLucene.Controllers
                 {
                     GoLucene.UpdateLuceneIndex(data);
                 }
+            }
+            return View();
+        }
+
+        public ActionResult Delete(int id)
+        {
+            if (id > 0)
+            {
+                var record = GoLucene.SearchDefault(id.ToString(), "Id").FirstOrDefault();
+                GoLucene.ClearLuceneIndexRecord(id);
             }
             return View();
         }

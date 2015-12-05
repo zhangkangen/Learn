@@ -23,6 +23,7 @@
                 </th>
                 <th>Name:</th>
                 <th>Description:</th>
+                <th>操作</th>
             </tr>
         </thead>
         @foreach (var data in list)
@@ -32,6 +33,7 @@
                     <td>@data.Id</td>
                     <td>@data.Name</td>
                     <td>@data.Description</td>
+                    <td>@Html.ActionLink("Delete", "Delete", new { Id = data.Id })</td>
                 </tr>
             </tbody>
         }
