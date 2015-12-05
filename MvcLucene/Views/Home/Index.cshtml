@@ -3,44 +3,49 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@Scripts.Render("/Scripts/jquery-1.8.2.min.js")
-<h2>Index</h2>
-@Html.ActionLink("添加", "Edit")
-<br />
-@ViewData["str"]
-<form method="POST">
-    <input type="text" name="key" />
-    <input type="submit" value="提交" />
-</form>
-@{
-    List<SampleData> list = (List<SampleData>)ViewData["result"] ?? new List<SampleData>();
-    if (list.Count > 0)
-    {
-    <table>
-        <thead>
-            <tr>
-                <th>Id:
-                </th>
-                <th>Name:</th>
-                <th>Description:</th>
-                <th>操作</th>
-            </tr>
-        </thead>
-        @foreach (var data in list)
-        {
-            <tbody>
-                <tr>
-                    <td>@data.Id</td>
-                    <td>@data.Name</td>
-                    <td>@data.Description</td>
-                    <td>@Html.ActionLink("Delete", "Delete", new { Id = data.Id })</td>
-                </tr>
-            </tbody>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="h2">Index</h2>
+        </div>
+        @Html.ActionLink("添加", "Edit")
+        <br />
+        @ViewData["str"]
+        <form method="POST">
+            <input type="text" name="key" />
+            <input type="submit" value="提交" />
+        </form>
+        @{
+            List<SampleData> list = (List<SampleData>)ViewData["result"] ?? new List<SampleData>();
+            if (list.Count > 0)
+            {
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id:
+                        </th>
+                        <th>Name:</th>
+                        <th>Description:</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                @foreach (var data in list)
+                {
+                    <tbody>
+                        <tr>
+                            <td>@data.Id</td>
+                            <td>@data.Name</td>
+                            <td>@data.Description</td>
+                            <td>@Html.ActionLink("Delete", "Delete", new { Id = data.Id })</td>
+                        </tr>
+                    </tbody>
+                }
+            </table>
+            }
         }
-    </table>
-    }
-}
-@section scripts
-{
+        @section scripts
+        {
 
-}
+        }
+    </div>
+</div>
