@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using JiebaNet.Segmenter;
+using log4net;
 using LuceneSearch.Data.Model;
 using LuceneSearch.Data.Repository;
 using LuceneSearch.Library;
@@ -12,11 +13,11 @@ namespace MvcLucene.Controllers
 {
     public class HomeController : Controller
     {
-        //
-        // GET: /Home/
+        private ILog _logger = LogManager.GetLogger(typeof (HomeController));
 
         public ActionResult Index(string key)
         {
+            _logger.InfoFormat("测试");
             if (!string.IsNullOrEmpty(key))
             {
                 GoLucene.AddWords(key);

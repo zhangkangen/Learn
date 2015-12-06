@@ -25,6 +25,9 @@ namespace MvcLucene
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+            log4net.Config.XmlConfigurator.ConfigureAndWatch(
+                new System.IO.FileInfo(Path.Combine(Server.MapPath("~"), "log4net.config")));
+
             //设置lucene索引文件的地址
             GoLucene._luceneDir = Path.Combine(System.Web.Hosting.HostingEnvironment.MapPath("/App_Data"), @"lucene_index");
 
