@@ -59,8 +59,8 @@
   <ItemGroup>
     <Compile Include="GoLucene.cs" />
     <Compile Include="IndexQueue.cs" />
-    <Compile Include="JiebaAnalyzer.cs" />
-    <Compile Include="JiebaTokenizer.cs" />
+    <Compile Include="JiebaForLucene\JiebaAnalyzer.cs" />
+    <Compile Include="JiebaForLucene\JiebaTokenizer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

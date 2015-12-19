@@ -78,6 +78,11 @@ namespace LuceneSearch.Library
 
         #region Add & Update Index
 
+        /// <summary>
+        /// 添加单个索引数据
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="writer"></param>
         private static void AddToLuceneIndex(SampleData data, IndexWriter writer)
         {
             var searchQuery = new TermQuery(new Term("Id", data.Id.ToString()));

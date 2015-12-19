@@ -85,7 +85,5 @@ namespace LuceneSearch.Library
     {
         public SampleData SampleData { get; set; }
         public IndexOptionType OptionType { get; set; }
-
-
     }
 }
