@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
 using JiebaNet.Segmenter;
@@ -13,11 +14,10 @@ namespace MvcLucene.Controllers
 {
     public class HomeController : Controller
     {
-        private ILog _logger = LogManager.GetLogger(typeof (HomeController));
+        private ILog _logger = LogManager.GetLogger(typeof(HomeController));
 
         public ActionResult Index(string key)
         {
-            _logger.InfoFormat("测试");
             if (!string.IsNullOrEmpty(key))
             {
                 GoLucene.AddWords(key);
@@ -29,7 +29,6 @@ namespace MvcLucene.Controllers
             {
                 ViewData["str"] = "请输入";
             }
-
             return View();
         }
 
@@ -62,7 +61,7 @@ namespace MvcLucene.Controllers
                 }
                 else
                 {
-                    IndexQueue.GetInstance().AddQueue(new Data{SampleData = data,OptionType = IndexOptionType.Add});
+                    IndexQueue.GetInstance().AddQueue(new Data { SampleData = data, OptionType = IndexOptionType.Add });
                 }
             }
             return View();

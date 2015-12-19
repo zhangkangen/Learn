@@ -286,5 +286,10 @@ namespace LuceneSearch.Library
             searcher.Dispose();
             return MapLuceneToDataList(docs);
         }
+
+        public static IEnumerable<SampleData> GetData(int id)
+        {
+            return null;
+        }
     }
 }
