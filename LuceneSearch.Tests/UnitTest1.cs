@@ -9,7 +9,7 @@ namespace LuceneSearch.Tests
         [TestMethod]
         public void TestMethod1()
         {
-
+            
         }
     }
 }
