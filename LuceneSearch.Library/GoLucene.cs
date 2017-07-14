@@ -20,7 +20,6 @@ namespace LuceneSearch.Library
     public static class GoLucene
     {
         public static string _luceneDir { get; set; }
-            //LuceneDir ?? Path.Combine(HttpContext.Current.Request.PhysicalApplicationPath, @"App_Data\lucene_index");
 
         private static FSDirectory _directoryTemp;
 

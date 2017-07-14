@@ -10,6 +10,7 @@ namespace LuceneSearch.Library
 {
     public sealed class IndexQueue
     {
+
         private readonly static IndexQueue indexQueue = new IndexQueue();
 
         private IndexQueue()
